@@ -7,9 +7,10 @@ Etapa concluida 4 requisição de cadastro de usuario via post funcionando e tes
 
 Etapa 5 parcialmente concluida: criação de pagina para listar usuarios, usando o verbo GET no serviço com o endereço informado do reqres
 
-Etapa 6: criação do update no servico pela api reqres utilizando o link informado.
+Etapa 6: criação do update no servico pela api reqres utilizando o link informado, assim como botão na pagina listar.component.html e um caminho
  
-etapa 7: criação do delete no servico pela api reqres utilizando o link informado.
+etapa 7: criação do delete no servico pela api reqres utilizando o link informado, criação do botão no list html e implementação da confirmação do botão de exclusão chamando o alertService para confirmar exclusão
+
 
 etapa 8 parcialmente concluida: atualização do formulario SB Admin Material campo email e senha atualizado e obrigatorios, fiz uma validação e desabilitei o botão de forma similar a etapa 4 mas devido a erros, tirei para não atrasar e prejudicar a funcionalidade do projeto.
 

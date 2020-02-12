@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CadastrarComponent } from 'src/app/layout/cadastrar/cadastrar.component';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { ListarComponent } from 'src/app/layout/listar/listar.component';
-import { map } from 'rxjs/operators';
+import { map, delay, tap } from 'rxjs/operators';
 import { Usuario } from 'src/app/layout/modelo/usuario';
 import { Observable } from 'rxjs';
 
@@ -44,7 +44,14 @@ export class CadastrarServico {
   public deletar(usuario: Usuario): Observable<Usuario[]> {
     return this.http.delete<Usuario[]>(this.API_URL + '/api/users/{ID}');
   }
-  public obterTodosUsuarios(): Observable<Usuario[]> {
+  /*public obterTodosUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.API_URL + '/api/users');
+  }*/
+
+  list() {
+    return this.http.get<Usuario[]>(this.API_URL + '/api/users')
+      .pipe(
+        tap(console.log)
+      );
   }
 }

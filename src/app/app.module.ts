@@ -20,6 +20,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CadastrarModule } from './layout/cadastrar/cadastrar.module';
 import { CadastrarServico } from './servicos/cadastrar/cadastrar.servico';
 import { RouterModule } from '@angular/router';
+
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
