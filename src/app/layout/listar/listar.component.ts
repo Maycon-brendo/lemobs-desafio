@@ -30,7 +30,7 @@ export class ListarComponent implements OnInit {
 
 
   ngOnInit() {
-    this.service.list().subscribe(dados => this.service = dados);
+    this.service.obterTodosUsuarios().subscribe(dados => this.usuarios = dados);
   }
 
   onEdit(id) {
@@ -41,7 +41,7 @@ export class ListarComponent implements OnInit {
     this.usuarioSelecionado = usuario;
 
 
-    const result$ = this.alertService.showConfirm('Confirmacao', 'Tem certeza que deseja remover esse curso?');
+    /*const result$ = this.alertService.showConfirm('Confirmacao', 'Tem certeza que deseja remover esse usuario?');
     result$.asObservable()
     .pipe(
       take(1),
@@ -61,7 +61,6 @@ export class ListarComponent implements OnInit {
     this.service.remove(this.usuarioSelecionado.id)
     .subscribe(
       success => {
-        this.onRefresh();
       },
       erro => {
         this.alertService.showAlertDanger('Erro ao remover usuario. Tente novamente mais tarde.');
@@ -70,7 +69,7 @@ export class ListarComponent implements OnInit {
   }
 
   onDeclineDelete() {
-  }
+  }*/
 }
 
 }

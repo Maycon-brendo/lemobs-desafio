@@ -1,5 +1,5 @@
 import { FormBuilder } from '@angular/forms';
-import { NgModule, Injectable } from '@angular/core';
+import { NgModule, Injectable, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CadastrarComponent } from 'src/app/layout/cadastrar/cadastrar.component';
@@ -13,21 +13,23 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CadastrarServico {
-  API_URL = 'https://reqres.in';
-  public usuarios: Usuario [];
+export class CadastrarServico implements OnInit {
 
   constructor(private http: HttpClient) {
 
   }
 
-  // tslint:disable-next-line:use-life-cycle-interface
-  ngOnInit(): void {
-    this.usuarios = [];
-  }
-
   get headers(): HttpHeaders {
     return new HttpHeaders().set('content-type', 'application/json');
+  }
+  API_URL = 'https://reqres.in';
+  public usuarios: Usuario [];
+  remove(id: any): import('rxjs').ObservableInput<unknown> {
+    throw new Error('Method not implemented.');
+  }
+
+  ngOnInit(): void {
+    this.usuarios = [];
   }
   public cadastrar(usuario: Usuario): Observable<Usuario> {
 
@@ -44,14 +46,8 @@ export class CadastrarServico {
   public deletar(usuario: Usuario): Observable<Usuario[]> {
     return this.http.delete<Usuario[]>(this.API_URL + '/api/users/{ID}');
   }
-  /*public obterTodosUsuarios(): Observable<Usuario[]> {
+   public obterTodosUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(this.API_URL + '/api/users');
-  }*/
-
-  list() {
-    return this.http.get<Usuario[]>(this.API_URL + '/api/users')
-      .pipe(
-        tap(console.log)
-      );
   }
+
 }
