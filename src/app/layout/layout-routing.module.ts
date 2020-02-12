@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { LayoutComponent } from './layout.component';
 import { CadastrarComponent } from 'src/app/layout/cadastrar/cadastrar.component';
 import { ListarComponent } from 'src/app/layout/listar/listar.component';
+import { LayoutComponent } from './layout.component';
+import { CadastrarServico} from 'src/app/servicos/cadastrar/cadastrar.servico';
 
 const routes: Routes = [
     {
@@ -25,6 +25,9 @@ const routes: Routes = [
             {
                 path: 'listar',
                 component: ListarComponent
+            },
+            {   path: 'usuario',
+                component: CadastrarServico
             }
         ]
     }

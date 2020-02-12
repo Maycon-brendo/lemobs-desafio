@@ -17,6 +17,8 @@ import { LayoutComponent } from './layout.component';
 import { NavComponent } from './nav/nav.component';
 import { ListarComponent } from './listar/listar.component';
 import { CadastrarComponent } from './cadastrar/cadastrar.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -29,9 +31,20 @@ import { CadastrarComponent } from './cadastrar/cadastrar.component';
         MatInputModule,
         MatMenuModule,
         MatListModule,
-        TranslateModule
+        TranslateModule,
+        FormsModule,
+         RouterModule.forChild([
+            { path: 'cadastrar', component: CadastrarComponent }
+        ]),
     ],
-    declarations: [LayoutComponent, NavComponent, TopnavComponent, SidebarComponent, ListarComponent, CadastrarComponent, ]
+    declarations: [
+        LayoutComponent,
+        NavComponent,
+        TopnavComponent,
+        SidebarComponent,
+        ListarComponent,
+        CadastrarComponent,
+    ]
 
 })
 export class LayoutModule { }

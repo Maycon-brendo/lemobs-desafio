@@ -7,24 +7,24 @@
             </div>
             <div fxFlex  fxlayout="row" fxlayout.lt-md="column">
                 <div fxFlexFill>
-                    <mat-form-field class="w-100">
-                        <input matInput placeholder="Email">
+                    <mat-form-field for="email" class="w-100">
+                        <input matInput id="email" type="text" placeholder="E-mail(obrigatorio)" required>
                     </mat-form-field>
                 </div>
             </div>
             <div fxFlex  fxLayout="row" fxLayout.lt-md="column">
                 <div fxFlexFill>
                     <mat-form-field class="w-100">
-                        <input matInput type="password" placeholder="Password">
+                        <input matInput type="password" placeholder="Senha (obrigatorio)" required>
                     </mat-form-field>
                 </div>
             </div>
             <div fxFlex  fxLayout="row" fxLayout.lt-md="column" style="margin: 20px 0 30px 0">
                 <div fxFlex>
-                    <mat-checkbox color="primary">Remember Me</mat-checkbox>
+                    <mat-checkbox color="primary">Me lembre</mat-checkbox>
                 </div>
                 <div fxFlex  fxLayoutAlign="end">
-                    <a href="javascript:void(0)">Forget Password</a>
+                    <a href="javascript:void(0)">Esqueceu a senha?</a>
                 </div>
             </div>
             <div fxFlex  fxLayout="row" fxLayout.lt-md="column">

@@ -1,3 +1,28 @@
-<p>
-  cadastrar works!
-</p>
+<form class="cadastrar-form">
+    <mat-form-field class="cadastrar-full-width">
+      <mat-label for="name">Nome</mat-label>
+      <input matInput id="name" type="text" placeholder="obrigatorio" 
+      [(ngModel)]="usuario.name" #name="ngModel" name="first" required/>
+    </mat-form-field>
+    <div class="invalid-feedback mb-2" *ngIf="name.invalid && (name.dirty || name.touched)">
+    <div *ngIf="name.errors.required">
+      Nome é obrigatorio
+    </div>
+    </div>
+  
+ 
+    <mat-form-field class="cadastrar-full-width">
+    <mat-label for="job">Emprego</mat-label>
+    <input matInput id="job" type="text" placeholder="obrigatorio"
+    [(ngModel)]="usuario.job" #job="ngModel" name="second" required/>
+    </mat-form-field>
+    <div class="invalid-feedback mb-2" *ngIf="job.invalid && (job.dirty || job.touched)">
+      <div *ngIf="job.errors.required">
+        emprego é obrigatorio
+      </div>
+      </div>
+
+    
+    <button button="submit" class="cadastrar-full-width" mat-raised-button color="primary" (click)="cadastrar()" [disabled]="!name.valid || !job.valid">Cadastrar</button>
+    
+  </form>

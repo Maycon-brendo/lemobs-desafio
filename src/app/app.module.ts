@@ -16,6 +16,10 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CadastrarModule } from './layout/cadastrar/cadastrar.module';
+import { CadastrarServico } from './servicos/cadastrar/cadastrar.servico';
+import { RouterModule } from '@angular/router';
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
@@ -28,12 +32,16 @@ export const createTranslateLoader = (http: HttpClient) => {
 };
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [
+        AppComponent,
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
         LayoutModule,
+        ReactiveFormsModule,
+        FormsModule,
         OverlayModule,
         HttpClientModule,
         TranslateModule.forRoot({
@@ -44,7 +52,7 @@ export const createTranslateLoader = (http: HttpClient) => {
             }
         })
     ],
-    providers: [],
+    providers: [CadastrarServico],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

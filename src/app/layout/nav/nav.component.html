@@ -12,6 +12,9 @@
             <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/listar']">
                 <mat-icon class="sidenav-icon">people</mat-icon> Listar
             </a>
+            <li class="nav-item" [routerLinkActive]='["link-active"]'>
+            <a class="nav-link text-dark" [routerLink]='["/entrar"]'>Entrar</a>
+            </li>
         </mat-nav-list>
     </mat-sidenav>
 </mat-sidenav-container>
